@@ -3,6 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import TypedComponent from "./TypedComponent";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiTailwindcss,
+} from "react-icons/si";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -115,15 +123,18 @@ const Hero = () => {
           variants={containerVariants}
         >
           {/* Left content - Main hero content (3/5 of width on large devices) */}
-          <motion.div className="lg:col-span-3 space-y-6" variants={containerVariants}>
+          <motion.div
+            className="lg:col-span-3 space-y-6"
+            variants={containerVariants}
+          >
             <motion.div variants={itemVariants}>
               <span className="text-purple-400 uppercase tracking-wider font-medium">
                 Welcome to my portfolio
               </span>
             </motion.div>
 
-            <motion.h1 
-              className="text-4xl md:text-6xl font-bold leading-tight" 
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold leading-tight"
               variants={itemVariants}
             >
               <span className="block">Hi, I'm </span>
@@ -132,8 +143,8 @@ const Hero = () => {
               </span>
             </motion.h1>
 
-            <motion.div 
-              className="text-xl md:text-2xl font-medium text-gray-300 flex items-center gap-2" 
+            <motion.div
+              className="text-xl md:text-2xl font-medium text-gray-300 flex items-center gap-2"
               variants={itemVariants}
             >
               <span>I'm a</span>
@@ -142,14 +153,19 @@ const Hero = () => {
               </span>
             </motion.div>
 
-            <motion.p 
-              className="text-lg text-gray-300 max-w-xl" 
+            <motion.p
+              className="text-lg text-gray-300 max-w-xl"
               variants={itemVariants}
             >
-              Transforming visionary ideas into elegant digital experiences. I combine technical expertise with creative problem-solving to build innovative solutions that drive real-world impact.
+              Transforming visionary ideas into elegant digital experiences. I
+              combine technical expertise with creative problem-solving to build
+              innovative solutions that drive real-world impact.
             </motion.p>
 
-            <motion.div className="flex flex-wrap gap-4 pt-4" variants={itemVariants}>
+            <motion.div
+              className="flex flex-wrap gap-4 pt-4"
+              variants={itemVariants}
+            >
               <motion.button
                 className="px-8 py-3 bg-purple-600 rounded-lg font-medium text-white flex items-center gap-2"
                 variants={buttonVariants}
@@ -230,11 +246,11 @@ const Hero = () => {
           </motion.div>
 
           {/* Right content - Visual element (2/5 of width on large devices) */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-2 flex justify-center"
             variants={backgroundVariants}
           >
-            <motion.div 
+            <motion.div
               className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-violet-600 p-1"
               animate={{
                 boxShadow: [
@@ -251,7 +267,7 @@ const Hero = () => {
             >
               <div className="absolute inset-1 bg-gray-900 rounded-full overflow-hidden backdrop-blur-sm flex items-center justify-center">
                 {/* You can add a profile image here if you want */}
-                <motion.div 
+                <motion.div
                   className="text-9xl font-bold bg-gradient-to-br from-purple-400 via-violet-500 to-indigo-400 bg-clip-text text-transparent"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -271,28 +287,46 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <motion.h3 
+          <motion.h3
             className="text-lg text-gray-400 mb-6 uppercase tracking-wider"
             whileInView={{ opacity: [0, 1], y: [20, 0] }}
             transition={{ duration: 0.8 }}
           >
             Tech Stack
           </motion.h3>
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-8 items-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
           >
-            {/* Replace these with actual tech icons or keep as text */}
-            {["React", "NextJS", "NodeJS", "Express", "MongoDB", "TailwindCSS"].map((tech, index) => (
+            {[
+              { name: "React", icon: <SiReact size={24} /> },
+              { name: "NextJS", icon: <SiNextdotjs size={24} /> },
+              { name: "NodeJS", icon: <SiNodedotjs size={24} /> },
+              { name: "Express", icon: <SiExpress size={24} /> },
+              { name: "MongoDB", icon: <SiMongodb size={24} /> },
+              { name: "TailwindCSS", icon: <SiTailwindcss size={24} /> },
+            ].map((tech, index) => (
               <motion.div
-                key={tech}
-                className="text-gray-400 hover:text-purple-400 transition-colors font-medium"
+                key={tech.name}
+                className="flex items-center gap-2 text-gray-400 transition-all font-medium"
                 variants={itemVariants}
-                whileHover={{ scale: 1.1, color: "#a78bfa" }}
+                whileHover={{
+                  scale: 1.1,
+                  color: "#a78bfa",
+                }}
               >
-                {tech}
+                <motion.div
+                  className="p-2 rounded-full transition-all"
+                  whileHover={{
+                    boxShadow: "0 0 12px #a78bfa, 0 0 20px #a78bfa",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {tech.icon}
+                </motion.div>
+                <span>{tech.name}</span>
               </motion.div>
             ))}
           </motion.div>

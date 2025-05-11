@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import "../src/styles/globals.css"
+import Loader from '@/src/components/WelcomeSplashLoader/Loader'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
+        <Loader />
         <div className="main-container">
           {children}
         </div>
