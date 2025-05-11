@@ -1,0 +1,230 @@
+:root {
+  /* Dark theme colors */
+  --darker-bg: #0a0a0c;
+  --dark-bg: #121316;
+  --light-bg: #1a1b1e;
+  --primary: #2563eb;
+  --accent-color: #3b82f6;
+  --text-color: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --border-color: #2d2e32;
+
+  /* Shadows */
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(90deg, var(--primary) 0%, var(--accent-color) 100%);
+  --gradient-secondary: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: '__Sen_f0ecf7', '__Sen_Fallback_f0ecf7';
+}
+
+body {
+  background: var(--darker-bg);
+  color: var(--text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title-color);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+
+.bg-dark {
+  background: var(--dark-bg);
+}
+
+.bg-darker {
+  background: var(--darker-bg);
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+/* Reusable dark theme classes */
+.dark-card {
+  background: var(--dark-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.dark-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.dark-button {
+  background: var(--gradient-primary);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Image styles for dark theme */
+.dark-image {
+  filter: brightness(0.9) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.dark-image:hover {
+  filter: brightness(1) contrast(1.2);
+}
+
+/* Section transitions */
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Focus styles for dark theme */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--primary);
+  color: var(--text-color);
+}
+
+/* Scrollbar styles for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-bg);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Input styles for dark theme */
+.dark-input {
+  background: var(--darker-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dark-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+}

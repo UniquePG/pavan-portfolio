@@ -1,0 +1,311 @@
+.h-wrapper {
+    background: linear-gradient(to right, #1e1b4b, #312e81);
+    height: 120vh;
+    overflow: hidden;
+}
+
+.h-wrapper .container {
+    padding-top: 8rem;
+}
+
+.h-container {
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+/********** Left Section **************/
+.h-left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.image-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.person-pill {
+    height: 18rem;
+    width: 8em;
+    border-radius: 99rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.person-pill-bg {
+    border-radius: 99rem;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: var(--dark-bg);
+}
+
+.person-pill-bg > img {
+    width: 100%;
+    object-fit: cover;
+    scale: 2;
+    margin-top: 4rem;
+    opacity: 0.9;
+}
+
+.image-row > :nth-child(2) {
+    transform: translateY(-6rem);
+}
+
+/********** Right Section **************/
+.h-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.h-title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.h-title > :nth-child(3) {
+    color: var(--text-color);
+    background: linear-gradient(90deg, var(--text-color) 0%, var(--gray) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.h-des {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.m-funded-button {
+    width: 200px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1rem 0rem;
+    border-radius: 999px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.m-funded-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 1024px) {
+    .h-wrapper {
+        height: max-content;
+    }
+    .h-wrapper .container {
+        padding-top: 5rem;
+    }
+    .h-container {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        padding-bottom: 3rem;
+    }
+    .h-arrow {
+        display: none;
+    }
+    .h-right {
+        flex: 1;
+        align-items: center;
+    }
+
+    .h-title {
+        align-items: center;
+        font-size: 2.2rem;
+    }
+
+    .h-des {
+        font-size: 1.2rem;
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* Add these styles to your Hero.css file */
+
+.typing-container {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Adjust based on your design */
+  }
+  
+  .im-text {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  
+  .typed-text {
+    color: #4D61F4; /* Use your theme color */
+    font-weight: bold;
+  }
+  
+  /* Cursor customization */
+  .typed-cursor {
+    font-size: 1.2rem;
+    color: #4D61F4; /* Match your theme color */
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+
+
+
+
+ 
+
+  /* -------------------------------- */
+/* Add these styles to your CSS file */
+
+/* General styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.typed-text {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the typed cursor */
+.typed-cursor {
+  color: #a78bfa;
+  font-weight: 400;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Enhancement for the tech stack items */
+.tech-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.tech-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.1), rgba(124, 58, 237, 0.15));
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.3s ease-out;
+  border-radius: 0.5rem;
+}
+
+.tech-item:hover::before {
+  transform: scaleX(1);
+}
+
+/* Profile circle animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.4);
+  }
+}
+
+.profile-circle {
+  animation: pulseGlow 5s infinite ease-in-out;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations for content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Gradient text animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #8b5cf6, #6d28d9, #4f46e5, #8b5cf6);
+  background-size: 300% 100%;
+  animation: gradientFlow 8s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}

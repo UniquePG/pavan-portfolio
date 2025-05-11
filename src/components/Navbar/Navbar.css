@@ -1,0 +1,215 @@
+.n-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.n-wrapper.scrolled {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.n-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.n-name {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.n-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.n-menu > a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.n-menu > a:hover {
+    color: var(--accent-color);
+}
+
+.n-menu .contact-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    border-radius: 99px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.n-menu .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.signup {
+    color: var(--dark-bg);
+    background-color: var(--third-color);
+    padding: 1rem 1.6rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border-radius: 999px;
+}
+
+.nm-container {
+    display: none;
+}
+
+.n-social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.n-social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.n-social-links a:hover {
+    color: var(--accent-color);
+}
+
+.n-social-links .contact-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    border-radius: 99px;
+    color: var(--text-color);
+}
+
+.n-social-links .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    color: var(--text-color);
+}
+
+/* Mobile social links */
+.nm-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.nm-social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--light-bg);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nm-social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1200px) {
+    .n-container {
+        display: none;
+    }
+
+    .nm-container {
+        display: block;
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        position: relative;
+        background-color: var(--primary-color);
+    }
+
+    .nm-container >:nth-child(1) {
+        font-weight: bold;
+    }
+
+    .nm-menu {
+        position: fixed;
+        top: 4rem;
+        padding: 3rem 2rem;
+        box-sizing: border-box;
+        left: 0;
+        display: flex;
+        background-image: linear-gradient(to right, rgb(173, 83, 137), rgb(60,16,83));
+        width: 100%;
+        flex-direction: column;
+        font-size: 1.2rem;
+        z-index: 99;
+        height: calc(100vh - 4rem);
+        transform: translateX(-150%);
+        transition: all 300ms ease-in-out;
+    }
+
+    .nm-menu a {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--light-bg);
+        color: var(--light-bg);
+    }
+
+    .m-signup-button {
+        width: 100%;
+        background-color: var(--third-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 1rem 0rem;
+        border-radius: 999px;
+        color: var(--dark-bg);
+    }
+}
+
+/* Animate underline effect */
+/* Pulse effect */
+/* Animate underline */
+.group:hover span {
+  width: 100%;
+}
+
+/* Gradient Text for Logo */
+.gradient-text {
+  background: linear-gradient(to right, #a78bfa, #7c3aed, #6366f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 5s ease-in-out infinite;
+  background-size: 200%;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+

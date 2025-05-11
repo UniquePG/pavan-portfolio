@@ -1,0 +1,321 @@
+.s-sub {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    width: 70%;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.s-sub > input {
+    outline: none;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: rgb(150, 150, 150);
+    flex: 1;
+    font-family: '__Sen_f0ecf7', '__Sen_Fallback_f0ecf7';
+}
+
+.s-sub > input::placeholder {
+    font-size: 0.8rem;
+}
+
+.subscribe-now {
+    position: absolute;
+    background-color: var(--secondary-color);
+    height: 80%;
+    right: 0.5rem;
+    border-radius: 999px;
+    padding: 0rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-wrapper {
+    background: var(--darker-bg);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.s-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, var(--primary) 0%, transparent 70%);
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.s-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.s-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.s-left .title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.s-left .text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.s-right {
+    flex: 1;
+}
+
+.email-container {
+    background: var(--dark-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.email-container:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.email-container input {
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    background: var(--darker-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.email-container input::placeholder {
+    color: var(--text-secondary);
+}
+
+.email-container input:focus {
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.s-button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background: var(--gradient-primary);
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.s-button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .s-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .s-left .title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .s-wrapper {
+        padding: 3rem 0;
+    }
+
+    .email-container {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .s-left .title {
+        font-size: 1.8rem;
+    }
+
+    .s-left .text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .s-wrapper {
+        padding: 2rem 0;
+    }
+
+    .s-left .title {
+        font-size: 1.5rem;
+    }
+
+    .email-container input,
+    .s-button {
+        padding: 0.8rem 1.2rem;
+    }
+}
+
+/* Animation keyframes */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Add subtle animation to form submission button */
+.dark-button {
+    background: linear-gradient(90deg, var(--primary), var(--accent-color));
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------ */
+
+.contact-wrapper {
+  width: 100%;
+  padding: 4rem 1rem;
+  background: linear-gradient(145deg, #0f0f0f, #1e1e1e);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.contact-left {
+  text-align: center;
+}
+
+.gradient-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00feba, #5b548a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtext {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: #cfcfcf;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px #00feba55;
+}
+
+.submit-btn {
+  padding: 0.9rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 255, 170, 0.3);
+}
+
+.submit-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 255, 170, 0.5);
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-left {
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-form {
+    flex: 1;
+  }
+}

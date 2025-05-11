@@ -1,0 +1,50 @@
+{
+  "name": "pavan-gupta-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio website of Pavan Gupta - Full Stack Developer",
+  "author": "Pavan Gupta <guptapavan549@gmail.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "classnames": "^2.3.2",
+    "framer-motion": "^10.16.16",
+    "next": "14.0.4",
+    "postcss": "^8.4.32",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-scroll": "^1.9.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "tailwindcss": "^3.3.6",
+    "typed.js": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.42",
+    "eslint": "^8.55.0",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack",
+    "react",
+    "nextjs",
+    "nodejs",
+    "developer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-github/portfolio"
+  }
+}

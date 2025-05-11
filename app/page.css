@@ -1,0 +1,367 @@
+.app {
+    position: relative;
+    transition: all 300ms ease-out;
+}
+
+.tag {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 2.6rem;
+    color: var(--title-color);
+    font-weight: bold;
+    text-align: center;
+    line-height: 3.5rem;
+    text-transform: capitalize;
+}
+
+.des {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 2rem;
+}
+
+.sec-title {
+    font-size: 2rem;
+    color: var(--title-color);
+    font-weight: 600;
+    text-align: center;
+    line-height: 3rem;
+    text-transform: capitalize;
+}
+
+.text {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+main {
+    background: var(--darker-bg);
+}
+
+section {
+    position: relative;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--darker-bg) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Dark theme scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-bg);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Selection color */
+::selection {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* Smooth section transitions */
+.section-transition {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-transition::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--darker-bg) 0%, transparent 100%);
+    z-index: 1;
+}
+
+/* Glass effect for floating elements */
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    .sec-title {
+        font-size: 1.8rem;
+    }
+    .des {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    .sec-title {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ---------------------------------------------------- */
+
+/* Add these CSS styles to enhance your Skills and Projects sections */
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* General styling for both sections */
+.section-title {
+  background: linear-gradient(90deg, #8b5cf6, #6d28d9, #4f46e5, #8b5cf6);
+  background-size: 300% 100%;
+  animation: gradientFlow 8s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animations */
+.animate-blob {
+  animation: blob 7s infinite ease-in-out;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+/* Skills section specific styles */
+.skill-card {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(124, 58, 237, 0.2);
+}
+
+.skill-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.3));
+}
+
+.skill-icon-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(124, 58, 237, 0.2), rgba(99, 102, 241, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .skill-icon-container::before {
+  opacity: 1;
+}
+
+/* Progress bar animation */
+.progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Projects Section Specific Styles */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover::after {
+  transform: scaleX(1);
+}
+
+.project-image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.project-image {
+  transition: transform 0.7s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(124, 58, 237, 0.2);
+}
+
+.project-overlay {
+  background: linear-gradient(to top, rgba(17, 24, 39, 1), rgba(17, 24, 39, 0.8), transparent);
+  transition: opacity 0.4s ease;
+}
+
+.tech-tag {
+  background: rgba(55, 65, 81, 0.5);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(124, 58, 237, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Filter buttons animation */
+.filter-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.filter-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #8b5cf6, #6d28d9);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.filter-button:hover::before {
+  transform: scaleX(1);
+}
+
